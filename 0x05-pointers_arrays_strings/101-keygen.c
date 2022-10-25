@@ -3,22 +3,22 @@
 #include <time.h>
 /**
  * main - generates keygen.
- * Return: 0 Success.
+ * Return: 0 Always.
  */
 int main(void)
 {
 	int r = 0, c = 0;
 	time_t t;
-	int sum = 0;
 
-	srand((unsigned) time(&t));
-	while (c < 15)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
 		r = rand() % 128;
-		c++;
-/*		printf("%c", r);*/
-		sum += r;
+		if ((c + r) > 2772)
+			break;
+		c = c + r;
+		printf("%c", r);
 	}
-	printf("%c", sum);
+	printf("%c\n", (2772 - c));
 	return (0);
 }
