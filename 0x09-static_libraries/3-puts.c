@@ -1,15 +1,16 @@
 #include "main.h"
+
 /**
- * _puts - use pointer to change value in the memory
- * @str: pointer to string location
- * Return: null/void
+ * _puts - prints a string, followed by a new line, to stdout
+ *
+ * @str: stores the value
  */
+
 void _puts(char *str)
 {
-	while (*str)
+	for (; *str != '\0'; str++)
 	{
-		putchar(*str);
-		str++;
+		_putchar(*str);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
